@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.blanco {
+  color: white;
+}
+
+nav {
+  background-color: rgba(27, 38, 59, 0.9176470588);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+nav .brand {
+  font-size: 34px;
+  background-color: white;
+  font-style: italic;
+}
+nav div .navbar-nav {
+  align-items: center;
+}
+nav div ul li {
+  margin: 3px 10px 0 10px;
+}
+nav div ul li a {
+  color: white;
+}
+
+.carrito {
+  width: 43px;
+}
+
+.bubble {
+  width: 43px;
+  font-size: 12px;
+  border: 1px solid white;
+  border-radius: 50px;
+  color: black;
+  background-color: white;
+}
+
+.rowBienvenida {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */
