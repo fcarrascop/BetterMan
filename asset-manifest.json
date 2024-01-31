@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/BetterMan/static/css/main.af5b3fca.css",
+    "main.js": "/BetterMan/static/js/main.9ea8c906.js",
+    "static/media/davidGoggins.jpg": "/BetterMan/static/media/davidGoggins.9a6e0a4cc8ef0d3cbbc3.jpg",
+    "static/media/carrito.png": "/BetterMan/static/media/carrito.9c0676b17c0df28ac5a3.png",
+    "index.html": "/BetterMan/index.html",
+    "main.af5b3fca.css.map": "/BetterMan/static/css/main.af5b3fca.css.map",
+    "main.9ea8c906.js.map": "/BetterMan/static/js/main.9ea8c906.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af5b3fca.css",
+    "static/js/main.9ea8c906.js"
+  ]
+}
