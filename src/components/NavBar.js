@@ -1,31 +1,33 @@
 import CartWidget from "./CartWidget";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
         <header>
-            <nav class="navbar navbar-expand-xl">
-                <div class="container">
-                    <a class="navbar-brand brand header-adj" href="./index.html">
+            <nav className="navbar navbar-expand-xl">
+                <div className="container">
+                    <NavLink className="navbar-brand brand header-adj" to="/">
                         BetterMan.
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    </NavLink>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNav">
+                    <div className="collapse navbar-collapse text-center justify-content-end" id="navbarNav">
                         {/* paginas */}
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link blanco" aria-current="page" href="">Guía</a>
+
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <NavLink className="nav-link blanco" aria-current="page" to="productos">Productos</NavLink>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link blanco" href="">Productos</a>
+                            <li className="nav-item">
+                                <NavLink className="nav-link blanco" aria-current="page" to="productos/categoria/higiene">Higiene</NavLink>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link blanco" href="">Acerca</a>
+                            <li className="nav-item">
+                                <NavLink className="nav-link blanco" to="productos/categoria/moda">Moda</NavLink>
                             </li>
-                            <li class="nav-item">
-                                <CartWidget/>
+                            <li className="nav-item">
+                                <CartWidget />
                             </li>
                         </ul>
                     </div>

@@ -48,4 +48,82 @@ nav div ul li a {
   margin-top: 20px;
 }
 
+.itemList {
+  gap: 10px;
+}
+.itemList h2 {
+  text-align: center;
+  padding: 30px 0 30px 0;
+  font-size: 40px;
+}
+
+.itemCard {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 77px 5px rgba(153, 153, 153, 0.12);
+  -moz-box-shadow: 0px 0px 77px 5px rgba(153, 153, 153, 0.12);
+  box-shadow: 0px 0px 77px 5px rgba(153, 153, 153, 0.1215686275);
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+}
+.itemCard:hover {
+  background-color: rgba(153, 153, 153, 0.1215686275);
+  transition: background-color 0.5s;
+}
+
+.itemCardImg {
+  width: 300px;
+  height: 300px;
+}
+
+.itemIndividual h1 {
+  padding: 10px 0 10px 0;
+}
+.itemIndividual h2 {
+  padding: 10px 0 10px 0;
+}
+.itemIndividual p {
+  padding: 10px 0 10px 0;
+}
+
+.volver {
+  color: white;
+  padding: 10px;
+  max-width: 100px;
+  background-color: rgba(0, 0, 0, 0.103);
+  text-decoration: none;
+  border-radius: 2px;
+}
+.volver:visited {
+  color: black;
+}
+.volver:link {
+  color: black;
+}
+
+.mas {
+  color: black;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.103);
+  text-decoration: none;
+  border-radius: 2px;
+}
+.mas:visited {
+  color: black;
+}
+.mas:link {
+  color: black;
+}
+
+.contenedor {
+  gap: 20px;
+}
+
+.comentario {
+  font-size: 22px;
+}
+
 /*# sourceMappingURL=index.css.map */

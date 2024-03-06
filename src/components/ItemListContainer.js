@@ -1,20 +1,40 @@
-import BienvenidaImg from "./../img/davidGoggins.jpg";
+import ItemCard from "./ItemCard";
+import { getProducts, getProductsByCategory } from "./AsyncMock";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-function ItemListConteiner() {
+const ItemListContainer = () => {
+    let { productcategory } = useParams();
+    const [ productos, setProductos ] = useState([]);
+    
+    let FuncionX = productcategory ? getProductsByCategory : getProducts;
+
+
+    useEffect(()=> {
+        FuncionX(productcategory)
+            .then(response => {
+                setProductos(response);
+            })
+            .catch(error => {
+                console.error(error)
+            })
+            
+    },[productcategory])
+
     return (
-        <section className="container">
-            <article className="row rowBienvenida">
-                <div className="col-sm-12 col-md-6 col-lg-6">
-                    <img className="img-fluid" src={BienvenidaImg}/>
-                </div>
-                <div className="col-sm-12 col-md-6 col-lg-6 bienvenida">
-                    <h1>Be strong. Be a man.</h1>
-                    <h2>Be a BetterMan.</h2>
-                    <p>Bienvenido a la tienda oficial para convertirse en un BetterMan.</p>
-                </div>
-            </article>
-        </section>
+        <article className="itemList container">
+            <div className="row">
+                <h2> Productos </h2>
+            </div>
+            <div className="row row-gap-3 gap-0">
+                {productos.map((item) => {
+                    return (
+                        <ItemCard nombre={item.nombre} id={item.id} img={item.img} precio={item.precio} key={item.id} />
+                    )
+                })}
+            </div>
+        </article>
     )
 }
 
-export default ItemListConteiner;
+export default ItemListContainer;
