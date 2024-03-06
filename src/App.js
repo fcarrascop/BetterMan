@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./css/index.css";
 
 
@@ -19,6 +19,7 @@ function App() {
             <Route path="productos/categoria/:productcategory" element={<ItemListConteiner/>}/>
             <Route path="productos/id/:productid" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<h2>404 NOT FOUND</h2>}/>
+          <Route path="/BetterMan" element={<Navigate to="/"/>}/>
         </Routes>
       </BrowserRouter>
     </div>
