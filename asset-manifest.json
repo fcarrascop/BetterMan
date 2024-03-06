@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BetterMan/static/css/main.6ed4e2fb.css",
-    "main.js": "/BetterMan/static/js/main.cdda87be.js",
+    "main.js": "/BetterMan/static/js/main.e9947b42.js",
     "static/media/juegodePinzas.png": "/BetterMan/static/media/juegodePinzas.0637b8fcb91cf8c436c5.png",
     "static/media/davidGoggins.jpg": "/BetterMan/static/media/davidGoggins.9a6e0a4cc8ef0d3cbbc3.jpg",
     "static/media/herramientasUnas.png": "/BetterMan/static/media/herramientasUnas.36e955e1d6019bf4275d.png",
@@ -13,10 +13,10 @@
     "static/media/carrito.png": "/BetterMan/static/media/carrito.9c0676b17c0df28ac5a3.png",
     "index.html": "/BetterMan/index.html",
     "main.6ed4e2fb.css.map": "/BetterMan/static/css/main.6ed4e2fb.css.map",
-    "main.cdda87be.js.map": "/BetterMan/static/js/main.cdda87be.js.map"
+    "main.e9947b42.js.map": "/BetterMan/static/js/main.e9947b42.js.map"
   },
   "entrypoints": [
     "static/css/main.6ed4e2fb.css",
-    "static/js/main.cdda87be.js"
+    "static/js/main.e9947b42.js"
   ]
 }
