@@ -1,22 +1,15 @@
 {
   "files": {
     "main.css": "/BetterMan/static/css/main.6ed4e2fb.css",
-    "main.js": "/BetterMan/static/js/main.e9947b42.js",
-    "static/media/juegodePinzas.png": "/BetterMan/static/media/juegodePinzas.0637b8fcb91cf8c436c5.png",
+    "main.js": "/BetterMan/static/js/main.6056fa8b.js",
     "static/media/davidGoggins.jpg": "/BetterMan/static/media/davidGoggins.9a6e0a4cc8ef0d3cbbc3.jpg",
-    "static/media/herramientasUnas.png": "/BetterMan/static/media/herramientasUnas.36e955e1d6019bf4275d.png",
-    "static/media/limpiadorOreja.png": "/BetterMan/static/media/limpiadorOreja.3942cf5a2e6830181aad.png",
-    "static/media/reloj.png": "/BetterMan/static/media/reloj.c5ee7fa87b7597d65af3.png",
-    "static/media/rasuradora.png": "/BetterMan/static/media/rasuradora.ea3913d9d72096274c30.png",
-    "static/media/maquinaAfeitar.png": "/BetterMan/static/media/maquinaAfeitar.37312998fbda2abaf10e.png",
-    "static/media/banano.png": "/BetterMan/static/media/banano.65bcfe4fd9ebe1b020fa.png",
     "static/media/carrito.png": "/BetterMan/static/media/carrito.9c0676b17c0df28ac5a3.png",
     "index.html": "/BetterMan/index.html",
     "main.6ed4e2fb.css.map": "/BetterMan/static/css/main.6ed4e2fb.css.map",
-    "main.e9947b42.js.map": "/BetterMan/static/js/main.e9947b42.js.map"
+    "main.6056fa8b.js.map": "/BetterMan/static/js/main.6056fa8b.js.map"
   },
   "entrypoints": [
     "static/css/main.6ed4e2fb.css",
-    "static/js/main.e9947b42.js"
+    "static/js/main.6056fa8b.js"
   ]
 }
