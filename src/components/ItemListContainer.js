@@ -1,25 +1,33 @@
 import ItemCard from "./ItemCard";
-import { getProducts, getProductsByCategory } from "./AsyncMock";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import { db } from "../components/config/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
+const itemsCollectionRef = collection(db, "Items");
+
 
 const ItemListContainer = () => {
     let { productcategory } = useParams();
     const [ productos, setProductos ] = useState([]);
     
-    let FuncionX = productcategory ? getProductsByCategory : getProducts;
+    let CollectionRef = productcategory ? query(itemsCollectionRef, where ("categoria", "==", productcategory)) : itemsCollectionRef;
 
 
     useEffect(()=> {
-        FuncionX(productcategory)
+        getDocs(CollectionRef)
             .then(response => {
-                setProductos(response);
+                let info = [];
+                response.forEach((doc)=>{
+                    info.push(doc.data())
+                });
+                setProductos(info);
             })
             .catch(error => {
                 console.error(error)
             })
             
-    },[productcategory])
+    },[productos])
 
     return (
         <article className="itemList container">
@@ -30,8 +38,8 @@ const ItemListContainer = () => {
                 {productos.map((item) => {
                     return (
                         <ItemCard nombre={item.nombre} id={item.id} img={item.img} precio={item.precio} key={item.id} />
-                    )
-                })}
+                        )
+                    })}
             </div>
         </article>
     )

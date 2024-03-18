@@ -27,7 +27,9 @@ function NavBar() {
                                 <NavLink className="nav-link blanco" to="productos/categoria/moda">Moda</NavLink>
                             </li>
                             <li className="nav-item">
-                                <CartWidget />
+                                <Link to="./cart">
+                                    <CartWidget />
+                                </Link>
                             </li>
                         </ul>
                     </div>
