@@ -35,9 +35,6 @@ function Cart() {
                         const Lista = Productos;
                         let product = (Lista.find((it) => (it.id == item.id))) ? (Lista.find((it) => (it.id == item.id))) : {"id": 0, "categoria":"-", "img":"-", "comentario":"-", "nombre": "-", "precio": 0, "stock": 0};
                         let costo = (item.cantidad)*(product.precio);
-                        if (costo) {
-                            setTotal(costo)
-                        };
                         return (
                             <p key={item.id}>
                                 <span>{product.nombre}</span>,  
@@ -49,7 +46,7 @@ function Cart() {
                     })
                 ) : (<p>No hay producto</p>)
             }
-            <button onClick={()=>{
+            <button className="mas" onClick={()=>{
                 DeleteList();
 
             }}>Eliminar Lista</button>

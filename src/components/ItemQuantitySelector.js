@@ -40,13 +40,21 @@ function ItemQuantitySelector({id}) {
     return (
         <div>
             <p>stock:{numero}</p>
-            <div>
-                <button onClick={AgregarItem} type="button">+++</button>
-                <p>Items: {contador}</p>
-                <button onClick={QuitarItem} type="button">-------</button>
+            <div className="d-flex flex-column">
+                <div className="container d-flex justify-content-evenly">
+                    <p className="">Items: {contador}</p>
+                    <div>
+                        <button className="mas" onClick={AgregarItem} type="button">+</button>
+                        <button className="mas" onClick={QuitarItem} type="button">-</button>
+
+                    </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <AddItemButton id={productid} cantidad={contador}/>
+                </div>
+                
             </div>
-            <AddItemButton id={productid} cantidad={contador}/>
-            
+
         </div>
     )
 }

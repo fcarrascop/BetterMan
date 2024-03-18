@@ -16,7 +16,7 @@ function AddItemButton({ id, cantidad }) {
         }
     }
     return (
-        <button  onClick={()=>{Agregar(id, cantidad)}}>
+        <button className="mas"  onClick={()=>{Agregar(id, cantidad)}}>
                 Agregar al carrito
         </button>
         
