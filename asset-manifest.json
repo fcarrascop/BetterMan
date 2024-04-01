@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/BetterMan/static/css/main.6ed4e2fb.css",
-    "main.js": "/BetterMan/static/js/main.5beb7123.js",
+    "main.css": "/BetterMan/static/css/main.44c2ba01.css",
+    "main.js": "/BetterMan/static/js/main.1e2241b2.js",
     "static/media/davidGoggins.jpg": "/BetterMan/static/media/davidGoggins.9a6e0a4cc8ef0d3cbbc3.jpg",
     "static/media/carrito.png": "/BetterMan/static/media/carrito.9c0676b17c0df28ac5a3.png",
     "index.html": "/BetterMan/index.html",
-    "main.6ed4e2fb.css.map": "/BetterMan/static/css/main.6ed4e2fb.css.map",
-    "main.5beb7123.js.map": "/BetterMan/static/js/main.5beb7123.js.map"
+    "main.44c2ba01.css.map": "/BetterMan/static/css/main.44c2ba01.css.map",
+    "main.1e2241b2.js.map": "/BetterMan/static/js/main.1e2241b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ed4e2fb.css",
-    "static/js/main.5beb7123.js"
+    "static/css/main.44c2ba01.css",
+    "static/js/main.1e2241b2.js"
   ]
 }
