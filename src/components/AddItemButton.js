@@ -6,22 +6,16 @@ import { useNavigate } from "react-router-dom";
 function AddItemButton({ id, cantidad }) {
     const {AddItem} = useContext(CartContext);
     const navigate = useNavigate()
-    const Agregar = (idItem, cantidadItem) => {
-        if (cantidadItem !== 0) {
-            AddItem(idItem, cantidadItem);
-            navigate("/cart");
-        }
-        else {
-            console.log("No hacer nada")
-        }
-    }
     return (
-        <button className="mas"  onClick={()=>{Agregar(id, cantidad)}}>
+        <button className="mas"  onClick={()=>{
+            if (cantidad !== 0)
+                AddItem(id, cantidad);
+                navigate("/cart")
+        }}>
                 Agregar al carrito
         </button>
         
     )
-
 }
 
 export default AddItemButton;

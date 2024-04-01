@@ -1,33 +1,17 @@
 import ItemCard from "./ItemCard";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-
-import { db } from "../components/config/firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
-const itemsCollectionRef = collection(db, "Items");
-
+import { CartContext } from "./context/CartContext";
 
 const ItemListContainer = () => {
     let { productcategory } = useParams();
-    const [ productos, setProductos ] = useState([]);
+    const { UpdateList, Lista } = useContext(CartContext);
+
+    if (!Lista) {
+        UpdateList();
+    }
     
-    let CollectionRef = productcategory ? query(itemsCollectionRef, where ("categoria", "==", productcategory)) : itemsCollectionRef;
-
-
-    useEffect(()=> {
-        getDocs(CollectionRef)
-            .then(response => {
-                let info = [];
-                response.forEach((doc)=>{
-                    info.push(doc.data())
-                });
-                setProductos(info);
-            })
-            .catch(error => {
-                console.error(error)
-            })
-            
-    },[productos])
+    let productos = productcategory ? Lista.filter((prod) => prod.categoria == productcategory) : Lista;
 
     return (
         <article className="itemList container">

@@ -2,7 +2,6 @@ import BienvenidaImg from "./../img/davidGoggins.jpg";
 import ItemListConteiner from "./ItemListContainer";
 
 
-
 function Home() {
     return (
         <section className="container">

@@ -126,4 +126,22 @@ nav div ul li a {
   font-size: 22px;
 }
 
+.indicativosCarrito {
+  padding: 40px 0 40px 0;
+}
+.indicativosCarrito p {
+  font-size: 24px;
+}
+
+.productosCarrito {
+  padding: 20px 0 20px 0;
+}
+.productosCarrito p {
+  font-size: 20px;
+}
+.productosCarrito img {
+  width: 100px;
+  height: 100px;
+}
+
 /*# sourceMappingURL=index.css.map */

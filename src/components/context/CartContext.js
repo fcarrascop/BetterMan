@@ -1,45 +1,81 @@
-import React, { createContext, useState } from "react";
+// Contexto
+import React, { createContext, useState, useEffect } from "react";
+// Base de datos
+import { db } from "../../components/config/firebase";
+import { collection, getDocs } from "firebase/firestore";
+const itemsCollectionRef = collection(db, "Items");
 
 export const CartContext = createContext()
 
+// Context provider
 const CartContextProvider = ({ children }) => {
     const [CartList, setCartList] = useState([]);
-    const [Contador, setContador] = useState(0)
+    const [ContadorItems, setContadorItems] = useState(0);
+    const [Lista, setLista] = useState([]);
 
+    const UpdateList = () => {
+        useEffect(()=> {
+            getDocs(itemsCollectionRef)
+                .then(response => {
+                    let info = [];
+                    response.forEach((doc)=>{
+                        info.push(doc.data())
+                    });
+                    setLista(info);
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        },[])
+    }
+    
     const AddItem = (id = 0, cantidad = 0) => {
-        if (CartList) {
-            const Lista = CartList;
-            let info = {"id": id, "cantidad": cantidad};
-            Lista.push(info);
-            setCartList(Lista);
+        if (CartList != "") {
+            let Listado = CartList;
+            let index = Listado.findIndex((item)=> item.id == id);
+            if (index != -1) {
+                Listado[index].cantidad += cantidad;
+            }
+            else {
+                let info = {
+                    "id": id,
+                    "cantidad": cantidad
+                }
+                Listado.push(info)
+            }
+            setCartList(Listado)
         }
-        else if (cantidad !== 0){
-            let info = [{"id": id, "cantidad": cantidad}];
-            setCartList(info)
+        else{
+            let Listado = CartList;
+            let info = {
+                "id": id,
+                "cantidad": cantidad
+            }
+            Listado.push(info);
+            setCartList(Listado);
         }
     }
 
     const DeleteList = () => {
         setCartList([]);
-        setContador(0);
-        console.log("Lista eliminada")
+        setContadorItems(0);
     }
 
     const DeleteItem = (id) => {
-        const Lista = CartList.filter((item) => item.id = !id);
+        const Lista = CartList.filter((item) => item.id != id);
         setCartList(Lista);
     }
 
     const CartCount = () => {
         if (CartList) {
             CartList.map((contado)=>{
-                setContador(Contador + Number(contado.cantidad) )
+                setContadorItems(ContadorItems + Number(contado.cantidad) )
             })
         }
     }
 
     return (
-        <CartContext.Provider value={{ CartList, AddItem, DeleteList, DeleteItem, CartCount }}>
+        <CartContext.Provider value={{CartList, Lista, setLista, UpdateList, AddItem, DeleteList, DeleteItem, CartCount}}>
             {children}
         </CartContext.Provider>
     )

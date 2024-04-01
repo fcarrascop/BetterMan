@@ -4,22 +4,17 @@ import { CartContext } from "./context/CartContext";
 
 // Arreglar
 function CartWidget() {
-    const { CartList, CartCount, Contador } = useContext(CartContext);
-
-    /* const Lista = CartList;
+    const { CartList} = useContext(CartContext);
+    const [Contador, setContador] = useState(0)
     useEffect(()=>{
-        if (Lista) {
-            Lista.forEach((element) => {
-                setContador(element.cantidad)
+        if (CartList.length != 0) {
+            let cantidad = 0;
+            CartList.forEach((item)=>{
+                cantidad += item.cantidad
             })
+            setContador(cantidad)
         }
-        else {
-            setContador(0)
-        }
-
-        
     },[CartList])
-    console.log(CartList); */
 
     return (
         <div className="nav-link blanco">
