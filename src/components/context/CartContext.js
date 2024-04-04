@@ -10,8 +10,8 @@ export const CartContext = createContext()
 // Context provider
 const CartContextProvider = ({ children }) => {
     const [CartList, setCartList] = useState([]);
-    const [ContadorItems, setContadorItems] = useState(0);
     const [Lista, setLista] = useState([]);
+    const [Pedido, setPedido] = useState([])
 
     const UpdateList = () => {
         useEffect(()=> {
@@ -58,7 +58,6 @@ const CartContextProvider = ({ children }) => {
 
     const DeleteList = () => {
         setCartList([]);
-        setContadorItems(0);
     }
 
     const DeleteItem = (id) => {
@@ -66,16 +65,8 @@ const CartContextProvider = ({ children }) => {
         setCartList(Lista);
     }
 
-    const CartCount = () => {
-        if (CartList) {
-            CartList.map((contado)=>{
-                setContadorItems(ContadorItems + Number(contado.cantidad) )
-            })
-        }
-    }
-
     return (
-        <CartContext.Provider value={{CartList, Lista, setLista, UpdateList, AddItem, DeleteList, DeleteItem, CartCount}}>
+        <CartContext.Provider value={{CartList, Lista, setLista, UpdateList, AddItem, DeleteList, DeleteItem, Pedido, setPedido}}>
             {children}
         </CartContext.Provider>
     )

@@ -11,9 +11,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart"
-
-// const docRef = doc(db, "Items", "1");
-// const docSnap = await getDoc(docRef);
+import Checkout from "./components/Checkout";
 
 function App() {
 
@@ -32,6 +30,8 @@ function App() {
             <Route path="*" element={<h2>404 NOT FOUND</h2>}/>
             <Route path="/BetterMan" element={<Navigate to="/"/>}/>
             <Route path="cart" element={<Cart/>}/>
+            <Route path="checkout" element={<Checkout/>}/>
+            <Route path="finished" element={<h1>Hola</h1>}/>
           </Routes>
         </CartContextProvider> 
       </BrowserRouter>

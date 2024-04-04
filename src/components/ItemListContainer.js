@@ -7,7 +7,7 @@ const ItemListContainer = () => {
     let { productcategory } = useParams();
     const { UpdateList, Lista } = useContext(CartContext);
 
-    if (!Lista) {
+    if (Lista == "") {
         UpdateList();
     }
     

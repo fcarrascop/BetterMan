@@ -2,9 +2,8 @@ import Carro from "./../img/carrito.png";
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "./context/CartContext";
 
-// Arreglar
 function CartWidget() {
-    const { CartList} = useContext(CartContext);
+    const { CartList } = useContext(CartContext);
     const [Contador, setContador] = useState(0)
     useEffect(()=>{
         if (CartList.length != 0) {

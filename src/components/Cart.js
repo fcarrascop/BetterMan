@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "./context/CartContext";
-
-import Checkout from "./Checkout";
+import { NavLink } from "react-router-dom";
 
 function Cart() {
-    const { DeleteList, CartList, Lista, UpdateList, DeleteItem } = useContext(CartContext);
+    const { DeleteList, CartList, Lista, UpdateList, DeleteItem, setPedido } = useContext(CartContext);
     const [Total,setTotal] = useState(0);
     const [Productos, setProductos] = useState([]);
 
-    if (!Lista){
+    if (Lista == ""){
         UpdateList()
     }
 
@@ -40,9 +39,6 @@ function Cart() {
         });
         setTotal(total);
     },[Productos])
-
-
-
 
     return (
         <div className="container">
@@ -103,8 +99,15 @@ function Cart() {
             <h4>Total boleta: {Total}</h4>
             <button className="mas" onClick={()=>{
                 DeleteList();
-            }}>Eliminar Lista</button>
-            <Checkout lista={Productos}/>
+                setProductos([]);
+            }}>
+                Eliminar Lista
+            </button>
+            <NavLink to="/checkout" onClick={()=>{
+                setPedido(Productos)
+            }} className="mas">
+                Checkout
+            </NavLink>
         </div>
     )
 }

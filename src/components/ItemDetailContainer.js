@@ -8,7 +8,7 @@ function ItemDetailContainer() {
     const { UpdateList, Lista } = useContext(CartContext);
     const [Producto, setProducto] = useState([]); 
     
-    if (Lista) {
+    if (Lista == "") {
         UpdateList();
     }
 
